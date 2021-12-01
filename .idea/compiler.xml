@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Projeto-C206-L4" />
+        <module name="Projeto-Diogo-1593" />
       </profile>
     </annotationProcessing>
   </component>
