@@ -1,6 +1,8 @@
 package br.inatel.c206;
 
 import br.inatel.c206.utils.Cadastro;
+import br.inatel.c206.utils.Leitura;
+import br.inatel.c206.utils.Menu;
 
 import java.util.Scanner;
 
@@ -8,41 +10,64 @@ public class App {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int selecao = 0;
+        String nome;
+        String curso;
+        int horariosLivres;
 
-        System.out.println("Digite o numero de uma das opções abaixo:");
-        System.out.println("1. Cadastro de Alunos");
-        System.out.println("2. Cadastro de Professor");
-        System.out.println("3. Cadastro de Monitor");
-
+        Menu.opcoesIniciais();
         selecao = input.nextInt();
 
-        if(selecao == 1){
-            System.out.println("Digite o nome do aluno: ");
-            String nome = input.next();
-            System.out.println("Digite o curso do aluno: ");
-            String curso = input.next();
+        while(selecao != 0){
 
-            Cadastro.aluno(nome, curso);
-        }
+            if(selecao == 1){
+                System.out.println("Digite o nome do aluno: ");
+                nome = input.next();
+                System.out.println("Digite o curso do aluno: ");
+                curso = input.next();
 
-        else if(selecao == 2){
-            System.out.println("Digite o nome do professor: ");
-            String nome = input.next();
-            System.out.println("Digite o e-mail do professor: ");
-            String curso = input.next();
+                Cadastro.aluno(nome, curso);
 
-            Cadastro.professor(nome, curso);
-        }
+                Menu.opcoesCorrentes();
 
-        else if(selecao == 3){
-            System.out.println("Digite o nome do monitor: ");
-            String nome = input.next();
-            System.out.println("Digite o curso do monitor: ");
-            String curso = input.next();
-            System.out.println("Quantos horarios livres: ");
-            int horariosLivre = input.nextInt();
+                selecao = input.nextInt();
+            }
 
-            Cadastro.monitor(nome, curso, horariosLivre);
+            else if(selecao == 2){
+                System.out.println("Digite o nome do professor: ");
+                nome = input.next();
+                System.out.println("Digite a disciplina do professor: ");
+                curso = input.next();
+
+                Cadastro.professor(nome, curso);
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 3){
+                System.out.println("Digite o nome do monitor: ");
+                nome = input.next();
+                System.out.println("Digite o curso do monitor: ");
+                curso = input.next();
+                System.out.println("Quantos horarios livres: ");
+                horariosLivres = input.nextInt();
+
+                Cadastro.monitor(nome, curso, horariosLivres);
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 4){
+                Leitura.alunos();
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
         }
     }
 }
