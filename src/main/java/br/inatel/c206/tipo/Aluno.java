@@ -8,6 +8,8 @@ public class Aluno {
         this.nome = nome;
         this.curso = curso;
     }
+    public Aluno() {
+    }
 
     public String getNome() {
         return nome;

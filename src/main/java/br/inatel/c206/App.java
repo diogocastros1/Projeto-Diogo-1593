@@ -1,8 +1,6 @@
 package br.inatel.c206;
 
-import br.inatel.c206.utils.Cadastro;
-import br.inatel.c206.utils.Leitura;
-import br.inatel.c206.utils.Menu;
+import br.inatel.c206.utils.*;
 
 import java.util.Scanner;
 
@@ -61,7 +59,60 @@ public class App {
             }
 
             else if(selecao == 4){
-                Leitura.alunos();
+                Leitura.exibeAlunos();
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 5){
+                Leitura.exibeProfessor();
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 6){
+                Leitura.exibeMonitor();
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 7){
+                System.out.println("Entre com o nome do aluno:");
+                String n = input.next();
+                Delete.alunos(n);
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 8){
+                System.out.println("Entre com o nome do professor:");
+                String n = input.next();
+                Delete.professores(n);
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+            else if(selecao == 9){
+                System.out.println("Entre com o nome do monitor:");
+                String n = input.next();
+                Delete.monitores(n);
+
+                Menu.opcoesCorrentes();
+
+                selecao = input.nextInt();
+            }
+
+            else if(selecao == 10){
+                Reescrever.alunos();
 
                 Menu.opcoesCorrentes();
 

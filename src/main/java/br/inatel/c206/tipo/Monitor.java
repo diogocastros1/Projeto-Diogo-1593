@@ -5,7 +5,7 @@ public class Monitor extends Aluno {
 
     public Monitor(String nome, String curso, int horarioLivre) {
         super(nome, curso);
-        this.horariosLivre = horariosLivre;
+        this.horariosLivre = horarioLivre;
     }
 
     public int getHorarioLivre() {
